@@ -1,0 +1,3 @@
+shop_homepage:
+    path:     /show
+    defaults: { _controller: ShopBundle:Default:show }

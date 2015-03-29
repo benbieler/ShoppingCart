@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShoppingCart</title>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<p><h1>ShoppingCart App</h1></p>
+<p><h2>Avalible products</h2></p>
+
+
+{% for item in product  %}
+    <b> {{ item.name }}</b> by: <i>{{ item.currentOwner }}</i>
+    <p> {{ item.description }} </p>
+    <h3>{{ item.price }} $</h3>
+    <button id="add" class="btn btn-default">Add to cart</button>
+    <br />
+{% endfor %}
+</body>
+</html>
+
+

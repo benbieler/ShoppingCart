@@ -16,7 +16,23 @@ Clone the repo:
 ```
 https://github.com/benbieler/ShoppingCart.git
 ```
+Run the internal web server:
+
+```
+php app/console server:run
+```
+Now you can access the app under:
+```
+http://localhost:8000/show
+```
+
+#LICENSE
+[License] (https://github.com/benbieler/ShoppingCart/blob/master/LICENSE)
 
 #Current ToDo:
 
  - Implement Travis for Continuous Integration.
+ - Simple DB operations | DONE!
+ - Add functionality to the 'Add to cart' button.
+ - Show selected items.
+
