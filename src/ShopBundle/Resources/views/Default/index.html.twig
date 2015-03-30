@@ -20,7 +20,8 @@
     <b> {{ item.name }}</b> by: <i>{{ item.currentOwner }}</i>
     <p> {{ item.description }} </p>
     <h3>{{ item.price }} $</h3>
-    <button id="add" class="btn btn-default">Add to cart</button>
+    {#<label><input type="checkbox" id="add">Add to Cart</label><hr />#}
+    {{ form_widget(form) }}
     <br />
 {% endfor %}
 </body>
