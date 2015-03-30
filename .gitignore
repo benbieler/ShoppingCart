@@ -10,4 +10,5 @@
 /vendor/
 /web/bundles/
 /.idea/
+/src/ShopBundle/Entity/Product.php~/
 /bower_components/
