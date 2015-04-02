@@ -46,5 +46,5 @@ bower install
 
 
 
-![A picture showing the finished product](https://github.com/benbieler/ShoppingCart/tree/master/src/ShopBundle/Resources/public/ShoppingCart.png)
+![A picture showing the finished product](https://github.com/benbieler/ShoppingCart/blob/master/src/ShopBundle/Resources/public/img/ShoppingCart.PNG)
 
