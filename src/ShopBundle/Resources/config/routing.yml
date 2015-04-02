@@ -1,6 +1,3 @@
 shop_homepage:
     path:     /show
     defaults: { _controller: ShopBundle:Default:show }
-_selected:
-    path:     /selected
-    defaults: { _controller: ShopBundle:Default:selected }
