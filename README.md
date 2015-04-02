@@ -44,10 +44,7 @@ bower install
 #LICENSE
 [License] (https://github.com/benbieler/ShoppingCart/blob/master/LICENSE)
 
-#Current ToDo:
 
- - Implement Travis for Continuous Integration.
- - Simple DB operations | DONE!
- - Add functionality to the 'Add to cart' button.
- - Show selected items.
+
+![A picture showing the finished product](https://github.com/benbieler/ShoppingCart/tree/master/src/ShopBundle/Resources/public/ShoppingCart.png)
 

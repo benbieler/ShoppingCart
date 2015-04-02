@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>ShoppingCart</title>
@@ -9,22 +9,70 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css"/>
+
 </head>
 <body>
+<div class="row">
+    <div class="large-12 columns">
+        <h1>ShoppingCart</h1>
+        <hr/>
+    </div>
+</div>
+<div class="row">
+    <div class="large-9 columns" role="content">
 
-<p><h1>ShoppingCart App</h1></p>
-<p><h2>Avalible products</h2></p>
+        <article>
+            {% for item in product %}
+                <h3>{{ item.name }}</h3>
+                <h6>by {{ item.currentOwner }}</h6>
+
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>{{ item.description }}</p>
+
+                        <p>
+
+                        <h3>{{ item.price }} $</h3></p>
+                    </div>
+                    <p>
+                        <button id="add" class="btn btn-primary" ng-init="count=0" ng-hide="count>2"
+                                ng-click="count=count+1">Add to Cart
+                        </button>
+                    </p>
+                    <br/>
+                </div>
+            {% endfor %}
+        </article>
+
+        <hr/>
+    </div>
+    <aside class="large-3 columns">
+
+        <h5>Cart</h5>
+        You have <b>{[{count}]}</b> items selected.
+    </aside>
 
 
-{% for item in product  %}
-    <b> {{ item.name }}</b> by: <i>{{ item.currentOwner }}</i>
-    <p> {{ item.description }} </p>
-    <h3>{{ item.price }} $</h3>
-    {#<label><input type="checkbox" id="add">Add to Cart</label><hr />#}
-    {{ form_widget(form) }}
-    <br />
-{% endfor %}
+</div>
+
+
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-6 columns">
+                <p>© Benjamin Bieler</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{%- block scripts -%}
+    {%- javascripts filter="?uglifyjs2" '@ShopBundle/Resources/public/js/app.js' -%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%- endjavascripts -%}
+{%- endblock -%}
 </body>
 </html>
-
 
