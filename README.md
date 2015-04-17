@@ -7,11 +7,17 @@ A simple shopping cart  based on Symfony 2, Angularjs and jQuery
 ![A picture showing the finished product](https://github.com/benbieler/ShoppingCart/blob/master/src/ShopBundle/Resources/public/img/ShoppingCart.PNG)
 
 #Contribute
-Clone the repository:
+## Clone the repository:
 ```
 git clone https://github.com/benbieler/ShoppingCart.git
 ```
-In order to use the app properly you will have to create a table, with the following name and fields:
+## SQL Schema Setup
+
+In order to setup the doctrine schema, you should generate the schema using the following command:
+
+    php app/console doctrine:schema:create
+
+You can also setup the schema manually using the following snippet:
 
 ```sql
 DROP TABLE IF EXISTS `product`;
@@ -26,6 +32,10 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`)
 );
 ```
+## Adding fixtures
+
+We think about using the Doctrine Fixture Bundle.
+
 Then you will have to add some data.
 
 To run the internal web server:
