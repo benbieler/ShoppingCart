@@ -1,0 +1,15 @@
+{% extends '@Shop/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Create new product</h1>
+
+        <form action="{{ url('product_create') }}" method="post" novalidate="novalidate">
+            {{ form_widget(form) }}
+
+            <div>
+                <button type="submit" class="btn btn-primary">Create new product</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

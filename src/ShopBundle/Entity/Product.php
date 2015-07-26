@@ -1,43 +1,69 @@
 <?php
+
 namespace ShopBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
- * @ORM\Entity
- * @ORM\Table(name="product")
+ * Product
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ShopBundle\Entity\ProductRepository")
  */
-class Product 
+class Product
 {
-	/**
-     * @ORM\Column(type="integer")
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	protected $id;
-
-	 /**
-     * @ORM\Column(type="string", length=100)
-     */
-	protected $name;
-
-	/**
-     * @ORM\Column(type="decimal", scale=2)
-     */
-    protected $price;
+    private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer")
+     * @Assert\NotBlank(message="Please enter a price")
+     * @Assert\Range(
+     *     max="1000",
+     *     min="1",
+     *     maxMessage="The product must not be more expensive than 1000 dollars",
+     *     minMessage="The product should cost at least one dollar"
+     * )
      */
-    protected $currentOwner;
+    private $price;
 
     /**
-     * @ORM\Column(type="text")
-     */	
-    protected $description;
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     * @Assert\NotBlank(message="Please enter a description")
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(message="Please enter a product name")
+     */
+    private $name;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="additionDate", type="datetimetz")
+     */
+    private $additionDate;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -45,32 +71,10 @@ class Product
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Product
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set price
      *
-     * @param string $price
+     * @param integer $price
+     *
      * @return Product
      */
     public function setPrice($price)
@@ -83,7 +87,7 @@ class Product
     /**
      * Get price
      *
-     * @return string 
+     * @return integer
      */
     public function getPrice()
     {
@@ -91,32 +95,10 @@ class Product
     }
 
     /**
-     * Set currentOwner
-     *
-     * @param string $currentOwner
-     * @return Product
-     */
-    public function setCurrentOwner($currentOwner)
-    {
-        $this->currentOwner = $currentOwner;
-
-        return $this;
-    }
-
-    /**
-     * Get currentOwner
-     *
-     * @return string 
-     */
-    public function getCurrentOwner()
-    {
-        return $this->currentOwner;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
+     *
      * @return Product
      */
     public function setDescription($description)
@@ -129,10 +111,59 @@ class Product
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
         return $this->description;
     }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Product
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set additionDate
+     *
+     * @param \DateTime $additionDate
+     *
+     * @return Product
+     */
+    public function setAdditionDate($additionDate)
+    {
+        $this->additionDate = $additionDate;
+
+        return $this;
+    }
+
+    /**
+     * Get additionDate
+     *
+     * @return \DateTime
+     */
+    public function getAdditionDate()
+    {
+        return $this->additionDate;
+    }
 }
+

@@ -1,4 +1,0 @@
-services:
-	shoppingcart_manager:
-		class: ShopBundle\Service\ItemManager
-		arguments: ['@doctrine.orm.default_entity_manager']

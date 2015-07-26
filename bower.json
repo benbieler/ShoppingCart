@@ -2,7 +2,7 @@
   "name": "ShoppingCart",
   "version": "0.0.0",
   "homepage": "https://github.com/benbieler/ShoppingCart",
-  "description": "A simple ShoppingCart app based on symfony2, angularjs, jQuery\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b\u001b[C\u001b and jQuery",
+  "description": "A simple ShoppingCart app based on symfony2, angularjs, jQuery",
   "authors": [
     "benbieler"
   ],

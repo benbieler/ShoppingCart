@@ -1,0 +1,22 @@
+{% extends '@Shop/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Recent products</h1>
+
+        {% for item in products %}
+            <h3>{{ item.name }} <small class="small-head">Created at {{ item.additionDate.timestamp|date('m/d/Y H:i') }}</small></h3>
+
+            <p>{{ item.description }}</p>
+
+            <p>
+                <h3>{{ item.price }} $</h3>
+            </p>
+
+            <p>
+                <a href="{{ url('shopping_basket_add', {'productId':item.id}) }}" class="btn btn-primary">Add to Cart</a>
+            </p>
+            <hr />
+        {% endfor %}
+    </div>
+{% endblock %}
