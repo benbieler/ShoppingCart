@@ -58,6 +58,6 @@ class ProductController extends Controller
             return $this->redirect($this->generateUrl('product_index'));
         }
 
-        return ["form" => $form->createView(), "errors" => $form->getErrors()];
+        return ['form' => $form->createView(), 'errors' => $form->getErrors()];
     }
 }
