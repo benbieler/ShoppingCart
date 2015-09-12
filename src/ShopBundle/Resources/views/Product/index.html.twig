@@ -17,6 +17,8 @@
                 <a href="{{ url('shopping_basket_add', {'productId':item.id}) }}" class="btn btn-primary">Add to Cart</a>
             </p>
             <hr />
+        {% else %}
+            <h3><em>No products found!</em></h3>
         {% endfor %}
     </div>
 {% endblock %}
